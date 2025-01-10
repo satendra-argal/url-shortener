@@ -119,6 +119,7 @@ func main() {
 	fmt.Println("Url Shortener started........ ")
 
 	http.HandleFunc("/shorten", shortenURLHandler)
+	http.HandleFunc("/", redirectHandler)
 
 	log.Println("server started at : 8080")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
